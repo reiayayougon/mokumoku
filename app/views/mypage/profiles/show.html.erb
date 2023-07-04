@@ -5,8 +5,8 @@
   </div>
   <!-- Card body -->
     <div class="card-body">
-        <%= form_with model: @user, url: mypage_profile_path do |f|  %>
-          <div class="d-lg-flex align-items-center justify-content-between">
+      <%= form_with model: @user, url: mypage_profile_path do |f|  %>
+        <div class="d-lg-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center mb-4 mb-lg-0">
               <%= image_tag @user.decorate.avatar, class: 'avatar-xl rounded-circle' %>
               <div class="ms-3">
@@ -21,16 +21,14 @@
               <% end %>
             </div>
           </div>
-        <% end %>
-      
-      <hr class="my-5">
-      <div>
-        <h4 class="mb-0">Personal Details</h4>
-        <p class="mb-4">
-          Edit your personal information and address.
-        </p>
-        <!-- Form -->
-        <%= form_with(model: @user, url: mypage_profile_path) do |f| %>
+          <hr class="my-5">
+          <div>
+            <h4 class="mb-0">Personal Details</h4>
+            <p class="mb-4">
+              Edit your personal information and address.
+            </p>
+          <!-- Form -->
+            <%# <%= form_with(model: @user, url: mypage_profile_path) do |f| %> 
           <div class="mb-3">
             <%= f.label :Email, class: 'form-label' %>
             <%= f.email_field :email, class: 'form-control', required: true, placeholder: 'Email' %>
@@ -51,7 +49,7 @@
             <!-- Button -->
             <%= f.submit class: 'btn btn-primary' %>
           </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RelationshipsController < ApplicationController
+    before_action :set_user, only: %i[followings followers]
   # フォローする時
   def create
     current_user.follow(params[:user_id])
@@ -13,13 +14,17 @@ class RelationshipsController < ApplicationController
   end
 
   def followings
-    user = User.find(params[:user_id])
     @users = user.followings
   end
 
   # フォロワー一覧
   def followers
-    user = User.find(params[:user_id])
     @users = user.followers
+  end
+
+  private
+
+  def set_user
+    user = User.find(params[:user_id])
   end
 end
