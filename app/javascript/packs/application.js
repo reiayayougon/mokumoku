@@ -9,5 +9,8 @@ import "channels"
 import "calendar.js"
 import "theme.js"
 import "image_preview.js"
+import 'bootstrap';
+import '../stylesheets/application';
+
 Rails.start()
 ActiveStorage.start()
