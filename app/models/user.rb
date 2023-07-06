@@ -95,8 +95,4 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-
-  def not_authenticated
-    redirect_to login_url, alert: 'ログインしてください'
-  end
 end

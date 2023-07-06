@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class RelationshipsController < ApplicationController
-    before_action :set_user, only: %i[followings followers]
-  # フォローする時
+  before_action :set_user, only: %i[followings followers]
+
   def create
     current_user.follow(params[:user_id])
     redirect_to request.referer

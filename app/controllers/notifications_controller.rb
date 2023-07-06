@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class NotificationsController < ApplicationController
-  before_action :require_login
-
   def index
     @notifications = current_user.notifications
                                  .reads_with_avatar
