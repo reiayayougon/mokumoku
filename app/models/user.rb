@@ -83,6 +83,10 @@ class User < ApplicationRecord
     notification_timings.liked_event.present?
   end
 
+  def logged_in?
+    !current_user.nil?
+  end
+
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
@@ -94,9 +98,5 @@ class User < ApplicationRecord
   # フォローしているか確認
   def following?(user)
     followings.include?(user)
-  end
-
-  def not_authenticated
-    redirect_to login_url, alert: 'ログインしてください'
   end
 end
