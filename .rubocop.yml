@@ -6,8 +6,6 @@ AllCops:
     - 'db/**/*'
     - 'bin/*'
     - 'config/**/*'
-    - 'vendor/**/*'
-
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
