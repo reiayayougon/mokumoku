@@ -2,8 +2,6 @@
 
 class RelationshipsController < ApplicationController
   before_action :set_user, only: %i[followings followers]
-    before_action :set_user, only: %i[followings followers]
-  # フォローする時
 
   def create
     current_user.follow(params[:user_id])
