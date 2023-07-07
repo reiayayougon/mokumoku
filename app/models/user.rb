@@ -83,10 +83,6 @@ class User < ApplicationRecord
     notification_timings.liked_event.present?
   end
 
-  def logged_in?
-    !current_user.nil?
-  end
-
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
