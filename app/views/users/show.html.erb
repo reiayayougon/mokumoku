@@ -1,0 +1,24 @@
+<div class="ms-3">
+        <h4 class="mb-3">Name</h4>
+    </div>
+        <div class="mb-3">
+        <%="#{@user.name}" %>
+        </div>
+    <div class="ms-3">
+        <h4 class="mb-3">Hobby</h4>  
+    </div>
+    <div class="mb-3">
+        <%="#{@user.hobby}" %>
+    </div>
+    <div class="ms-3">
+        <h4 class="mb-3">Profile</h4>
+    </div>
+    <div class="mb-3">
+        <%="#{@user.profile}" %>
+    </div>
+    <% if current_user.following?(@user) %>
+        <%= link_to "フォローを外す", user_relationship_path(@user), method: :delete %>
+    <% else %>
+        <%= link_to "フォローする",  user_relationships_path(@user), method: :post %>
+    <% end %>
+</div>

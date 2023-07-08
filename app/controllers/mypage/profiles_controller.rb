@@ -5,6 +5,10 @@ class Mypage::ProfilesController < Mypage::BaseController
     @user = current_user
   end
 
+  def edit
+    @user = current_user.find(params[:id])
+  end
+
   def update
     @user = User.find(current_user.id)
     if @user.update(profile_params)
@@ -17,6 +21,6 @@ class Mypage::ProfilesController < Mypage::BaseController
   private
 
   def profile_params
-    params.require(:user).permit(:name, :avatar)
+    params.require(:user).permit(:name, :avatar, :hobby, :profile)
   end
 end

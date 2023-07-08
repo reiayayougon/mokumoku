@@ -14,23 +14,24 @@
 </head>
 
 <body>
-<%= render 'shared/header' %>
-<div class="py-3">
-  <div class="pt-5 pb-5">
-    <div class="container">
-      <%= render 'mypage/shared/user_info' %>
-      <!-- Content -->
-      <div class="row mt-0 mt-md-4">
-        <div class="col-lg-3 col-md-4 col-12">
-          <%= render 'mypage/shared/sidebar' %>
-        </div>
-        <div class="col-lg-9 col-md-8 col-12">
-          <%= yield %>
+  <%= render 'shared/header' %>
+  <div class="py-3">
+    <div class="pt-5 pb-5">
+      <div class="container">
+        <%= render 'mypage/shared/user_info' %>
+        <!-- Content -->
+        <div class="row mt-0 mt-md-4">
+          <div class="col-lg-3 col-md-4 col-12">
+            <%= render 'mypage/shared/sidebar' %>
+          </div>
+          <div class="col-lg-9 col-md-8 col-12">
+            <%= render 'shared/flash_message' %>
+            <%= yield %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<%= render 'shared/footer' %>
+  <%= render 'shared/footer' %>
 </body>
 </html>
