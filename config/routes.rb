@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   resources :users, only: %i[new create show] do
-    member do
-      get :followings, :followers
-    end
+      member do
+        get :followings, :followers
+      end
       resources :relationships, only: %i[create destroy]
     end
   resources :events do
